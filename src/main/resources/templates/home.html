@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${pageTitle}">Java 学習支援サイト</title>
+  <link rel="stylesheet" th:href="@{/css/site.css}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container"><span class="brand-mark">☕</span><span>Java 学習支援サイト</span></div>
+  </header>
+  <main class="container hero">
+    <p class="eyebrow">📚 SKELETON</p>
+    <h1>Javaを学び、<span>手を動かして理解する。</span></h1>
+    <p class="lead" th:text="${skeletonMessage}">学習コンテンツ機能はこれから実装します。</p>
+    <div class="cards">
+      <article class="card"><div class="icon">🧩</div><h2>学習コース</h2><p>Java基礎、オブジェクト指向、Springを段階的に学べる場所。</p><span class="status">準備中</span></article>
+      <article class="card"><div class="icon">💻</div><h2>演習・課題</h2><p>コードを書いて提出し、理解度を確認する学習フロー。</p><span class="status">準備中</span></article>
+      <article class="card"><div class="icon">📈</div><h2>学習進捗</h2><p>コースの進捗、解答履歴、次に学ぶ内容を可視化。</p><span class="status">準備中</span></article>
+    </div>
+    <div class="next-step"><strong>次の実装ステップ</strong><span>コース・レッスン・課題のドメインモデルを設計し、Oracle の Migration を追加します。</span></div>
+  </main>
+  <footer class="container footer">© 2026 Java 学習支援サイト · <a href="/api/health">システム状態</a></footer>
+</body>
+</html>

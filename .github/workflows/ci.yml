@@ -1,0 +1,26 @@
+name: 🧪 Java CI 検証
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: ✅ Build・Test・監査
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 ソース取得
+        uses: actions/checkout@v4
+      - name: ☕ Java 21 セットアップ
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: 🧪 テスト
+        run: ./mvnw -B verify
+      - name: 📦 パッケージ
+        run: ./mvnw -B package -DskipTests
